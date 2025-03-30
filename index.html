@@ -6,12 +6,13 @@
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website - Tony Shen</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div id="header">
     <div class="container">
         <nav>
-            <img src="images/logo.png" alt="logo">
+            <img src="images/logo.png" alt="logo" class="logo">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -21,8 +22,74 @@
                 
             </ul>
         </nav>
+        <div class="header-text">
+            <h1>Hey, It's Tony Shen</h1>
+            <p>Data Professional</p>
+        </div>
     </div>
 </div>
+<!---------------------about----------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                    When a ship carrying his brother Antonio passes nearby, Prospero conjures up a storm with help from Ariel and the ship is destroyed. Antonio is shipwrecked, along with Alonso, Ferdinand (Alonso's son and heir to the throne), Sebastian (Alonso's brother), Gonzalo (Prospero's trustworthy minister), Adrian, and other court members.
+
+
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI?UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023 - Current</span><br>Program Data Analyst at HUD 🏙️</li>
+                        <li><span>2023 - 2024</span><br>Research and Technology Analyst at TCC 🗳️</li>
+                        <li><span>2023 - 2023</span><br>Government Relations Intern at ETA 💳</li>
+                        <li><span>2021 - 2023</span><br>Data Curation Fellow & Teaching Assistant at UMD 🐢</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education"> 
+                    <ul>
+                        <li><span>Current</span><br>MS from GaTech</li>
+                        <li><span>2023</span><br>BS from UMD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 
 </body>
 </html>

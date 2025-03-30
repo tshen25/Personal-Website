@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppin', serif;
+    font-family: 'Poppins', serif;
     box-sizing: border-box;
 }
 body{
@@ -31,23 +31,116 @@ nav{
     width: 140px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
-nav ul li a{
-    color:  #fff;
+
+nav ul li a {
+    color: #f5f5f5;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    position: relative; /* Ensures ::after is positioned relative to this */
+    display: inline-block; /* Helps ensure underline aligns properly */
+    padding-bottom: 5px; /* Creates space for underline */
 }
-nav ul li a::after{
+
+nav ul li a::after {
     content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #37a1ed;
+    transition: width 0.2s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Expands the underline */
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Poppins', serif;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+    color: #fff;
+    font-family: 'Poppins', serif;
+}
+#header {
+    background-color: rgba(0, 0, 0, 0.4); /* Darkens the entire background */
+    background-blend-mode: darken; /* Blends it with the image */
+}
+/*-------------------about-------------------*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
     width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
     height: 3px;
     background: #ff004f;
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -8px;
+    transition: 0.3s;
+}
+.tab-links.active-link::after{
+    width: 50%;
 }
 
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
